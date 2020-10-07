@@ -47,15 +47,20 @@ public class AddTask extends HttpServlet
 		String input_tag = request.getParameter( "tag" );
 		
 		//DEBUGGING
-		System.out.println("[DEBUG] [AddTask] input_name: "+input_name);
+		/*System.out.println("[DEBUG] [AddTask] input_name: "+input_name);
 		System.out.println("[DEBUG] [AddTask] input_description: "+input_description);
 		System.out.println("[DEBUG] [AddTask] input_dueDate: "+input_dueDate);
-		System.out.println("[DEBUG] [AddTask] input_tag: "+input_tag);
+		System.out.println("[DEBUG] [AddTask] input_tag: "+input_tag);*/
 		
 		//Convert Date from string to MySQL date
 		Date dueDate = getDate(input_dueDate);
 		
-		DBUtils.createTask( input_name, input_description, dueDate, input_tag );
+		boolean success = DBUtils.createTask( input_name, input_description, dueDate, input_tag );
+		
+		if( !success)
+		{
+			request.setAttribute( "Addsuccessful", "Unable to Add Task Due to Missing Data fields. Please make sure all data blocks are filled out." );
+		}
 		
 		request.getRequestDispatcher("/TodoList/").forward(request, response);
 	}

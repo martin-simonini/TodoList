@@ -8,7 +8,7 @@ pageEncoding="ISO-8859-1"%>
 <style>
 body{ background-color: #d9d9d9;}
 header {
-    background-color: #336699;
+    background-color: #3366ff;
     color:white;
     text-align:center;
     padding:5px;	 
@@ -33,6 +33,7 @@ footer {
     text-align:center;
     padding:5px;	 	 
 }
+
 a:link {
   text-decoration: none;
 }
@@ -72,14 +73,12 @@ a:active {
 <title>Todo List</title>
 </head>
 <body>
-	<header><h1>Todo List</h1></header>
+	<header><h1>Search Results</h1></header>
 	<br><br>
 	<center>
 		<button><a href="/TodoList/addTask">Add Task</a></button>
-		<button><a href="/TodoList/search">Search for Task</a></button>
+		<button><a href="/TodoList/index">Home</a></button>
 	</center>
-	
-	<center><h3>${Addsuccessful}</h2></center>
 	<center>
 	<table class="styled-table">
 		<thead>

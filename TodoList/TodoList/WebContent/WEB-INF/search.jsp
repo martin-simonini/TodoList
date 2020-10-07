@@ -6,7 +6,7 @@
 <style>
 body{ background-color: #d9d9d9;}
 header {
-    background-color:black;
+    background-color: #0099cc;
     color:white;
     text-align:center;
     padding:5px;	 
@@ -45,29 +45,30 @@ a:hover {
 a:active {
   text-decoration: underline;
 }
+
+
 </style>
 </head>
 
 <body>
 <header>
-<h1>Add New Task</h1>
+<h1> Search For a Task</h1>
 </header>
 
 <nav>
-<a href="/TodoList/">View Current Tasks</a> <br>
+<button><a href="/TodoList/">Home</a></button>
 </nav>
 
 <section>
-	<h1>User Input</h1>
+	<h1>Search for Task</h1>
 	
-	<form action="AddTask" method="POST">
+	<form action="SearchTask" method="POST">
 	
 		Task Name: <input type="text" name="name"> <br />
-		Description: <input type="text" name="description"> <br />
 		Due Date: <input type="date" name="dueDate"> <br />
 		Tag: <input type="text" name="tag"> <br />
 		
-		<input type="submit" value="Submit" />
+		<input type="submit" value="Search" />
 	</form>
 
 </section>
